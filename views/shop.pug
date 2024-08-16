@@ -1,0 +1,15 @@
+extends common/layout
+
+block layout-content 
+  .main-content 
+    h2.page-title Shop!
+    p.shop-desc BellaMia is committed to making affordable, recyclable, waterproof jewelry that is not only on-trend but actually long-lasting. Shop for everyday essentials in rings, necklaces, earrings and bracelets.
+    div#content-shop
+      .content-items
+        each jewerly in jewerlies
+          .block-item 
+            .item-img <i class="fa-solid fa-heart"></i>
+            .item-name #{jewerly.name}
+            .item-type #{jewerly.type}
+            .item-price #{jewerly.price} CAN
+            .item-material Materials: #{jewerly.material}

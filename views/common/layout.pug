@@ -1,0 +1,16 @@
+doctype html
+html 
+    head
+        meta(charset="uft-8")
+        title #{title} | Website 
+        link(rel="stylesheet", href="/css/stylesheet.css")
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Urbanist:ital,wght@0,100..900;1,100..900&family=Whisper&display=swap" rel="stylesheet")
+        script(src="https://kit.fontawesome.com/d04a5fbe66.js" crossorigin="anonymous")
+        script(src="/js/photos.js")
+    body
+        include header.pug 
+        main#main 
+          block layout-content 
+        include footer.pug

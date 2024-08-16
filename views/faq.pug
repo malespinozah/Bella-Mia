@@ -1,0 +1,73 @@
+extends common/layout
+
+block layout-content 
+  .main-content
+    .container-faq
+      h2.page-title FAQ: HOW CAN WE HELP YOU?
+      p.msgFAQ Feel free to look up into all of our questions and answers, if you can't find what you're looking for contact us at <a href="mailto">support@bellamia.com</a>. Our customer support team are happy to provide you the help you need!
+
+      div#main-faq
+        .content-faq
+          .topics-faq 
+            .title 
+              h3 OUR JEWELRY
+            .text-content 
+              h4 What's the material of our jewelry?
+              p All our jewelry is made from the highest quality stainless steel, then plated with 18k gold using a technique called PVD (Physical Vapor Deposition). This new way of plating is 10x stronger than standard gold or silver plating, making our jewelry 100% waterproof!
+              h4 Are all the products waterproof?
+              p This is all possible due to our unique plating process! We use the highest quality stainless steel that is then plated with 18k gold using a technique called PVD (Physical Vapor Deposition). This new, modern way of plating, is ten times thicker than standard gold plating, is environmentally friendly, and uses a vacuum coating process, resulting in an extremely durable finish. This durability naturally makes it almost anything proof!
+          .topics-faq 
+            .title
+              h3 ORDER AND SHIPPING
+            .text-content
+              h4 How is your order and shipping process? 
+              p You will receive an order confirmation via email as soon as you have placed your order. Your order will be processed and dispatched within 1-2 business days. As soon as your order is on its way it may take between 5-15 days depending on your shipping destination. We'll send you the tracking number via email, allowing you to follow its journey on our tracking page. An email notification will be sent when your order is shipped and delivered.
+              h4 How can I track my order?
+              p You’ll be able to track the status of your order as soon as you place an order on our tracking page by entering your order number and email. You can locate your order number in your account and/or order confirmation email. 
+          .topics-faq 
+            .title
+              h3 LIFETIME WARRANTY
+            .text-content
+              h4 What does the Lifetime Warranty cover? 
+              p In the event that there is a gold coating color issue, you may submit a claim at any time. Upon evaluation, we will provide you with a replacement. Your item must be purchased from bellamia.com. Mystery products and free gifts are not covered under our warranty. 
+              p Coverage includes:
+              li Gold coating color issues
+              p Does not include:
+              li Silver tarnishing
+              li Pearl Discoloration
+              li Lost jewelry
+              li Scratches from normal wear and tear
+              li Damage from misuse of the jewelry or improper storage
+              h4 What does the broken/faulty item warranty cover? 
+              p In the event you have received a faulty item or a piece of jewelry has broken due to a manufacturing defect you have within 90 days of the item(s) delivery to submit a claim. Upon evaluation, we will provide you with a replacement. Your item must be purchased from bellamia.com. Mystery products and free gifts are not covered under our warranty.
+              p Coverage includes:
+              li Manufacturing defects
+              li Does not include:
+              li Lost jewelry
+              li Scratches, bends, and breaks from normal wear and tear
+              li Damage from misuse of jewelry or improper storage 
+          .topics-faq 
+            .title 
+              h3 PAYMENT
+            .text-content
+              h4 What payment methods do you accept? 
+              p We accept card payments with Visa, MasterCard, and American Express. Aside from the major credit cards, we also accept PayPal, Apple Pay, Google Pay, and Shop Pay! When selecting PayPal as a payment option at checkout, you will be directed to the PayPal site to 'Log in' and review the amount shown before clicking 'Pay Now'. Once this transaction is complete, you will then return to bellamia.com.
+              h4 "Payment was not accepted"
+              p We recommend trying the following actions:
+              li Use another browser or device 
+              li Make sure that your card is open for international payments
+              li Try another payment method or contact your bank
+              p If you've tried those, it might be best to try again in a few hours just in case this is an isolated error.
+              h4 How are refunds processed? 
+              ol 
+                li Credit Card
+                p From the day the return is processed by our customer support team, depending on your bank, it will take around 2-7 business days for the refund amount to appear on your end. 
+                li Debit Visa Card
+                p Online purchases made with a Debit Visa Card will be processed as a credit card, and it will take around 2-7 business days for the refund amount to appear on your end. 
+                li Paypal
+                p Once a refund has been made back to your PayPal account, you will receive a notification from PayPal. It will take around 2-7 business days for the refund amount to appear on your end.
+    .add-faq
+      .add-cont
+        .add-text Sign up and get a discount in your first purchase!
+        input(type="email", name="email", value="enter your email")
+        input(type="submit", value="get my discount", id="btn")
