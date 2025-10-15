@@ -33,8 +33,12 @@ a {
 
 nav {
     width: 100%;
-    display: flex;
-    flex-direction: column;
+    display: block;
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 nav li {
@@ -64,45 +68,54 @@ nav li {
     justify-content: center;
     align-items: center;
     gap: 5%;
-    padding: 20px 0;
+    padding: 15px 0;
+    margin-bottom: 0;
 }
 
 #links a {
-    color: #000;
+    font-size: 0.85rem;
+    color:#000;
     text-transform: uppercase;
-    font-weight: 500;
-    letter-spacing: 2px;
+    font-weight: 700;
+    letter-spacing: 0px;
+    transition: 0.4s all ease-in-out;
 }
+
+#links a:hover {
+    color: #12805E
+}
+
 
 /* --- MAIN CONTENT ---*/
 
 h2.page-title {
+    margin-top: 3%;
     text-align: center;
 }
 
 .shop-desc {
-    width: 600px;
+    width: 60%;
     text-align: center;
     margin: 0 auto;
-    margin-bottom: 100px;
+    margin-bottom: 3rem;
 }
 
 #banner {
     width: 100%;
-    height: 500px;
-    background-image: url(/images/banner.jpg);
-    background-position: center;
+    height: 400px;
+    background-image: url(/images/Intro-Option-2-2.jpg);
+    background-position: 0 30%;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
 }
 
 .banner-text {
     width: 100%;
-    height: 500px;
-    background-color: rgba(0,0,0,0.6);
+    height: 400px;
+    background-color: rgba(0,0,0,0.3);
     color: #fff;
-    font-family: "Whisper", cursive;
-    font-size: 80px;
+    font-family: "Whisper";
+    font-size: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -197,13 +210,13 @@ h1.page-title {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    padding: 80px 0;
+    padding: 1.5rem 0;
     border-bottom: 1px solid #aaa;
     flex-wrap: wrap;
 }
 
 #brands img {
-    height: 55px;
+    height: 2rem;
     padding: 20px;
 }
 
@@ -218,7 +231,6 @@ h1.page-title {
 }
 
 .box-catName {
-    margin-top: 90px;
     transition: 0.5s ease-in-out;
 }
 
@@ -231,8 +243,8 @@ h1.page-title {
 }
 
 .box-category {
-    width: 450px;
-    height: 350px;
+    width: 250px;
+    height: 200px;
     background-size: 100%;
     background-position: bottom;
     transition: 0.5s ease-in-out;
@@ -240,7 +252,7 @@ h1.page-title {
 }
 
 .box-category:hover {
-    background-size: 120%;
+    background-size: 110%;
     background-position: top;
 }
 
@@ -249,16 +261,15 @@ h1.page-title {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: center;
-    gap: 50px;
+    justify-content:space-evenly;
     padding: 50px 0;
 }
 
 #bestsellers a {
-    border-bottom: 3px solid #000;
-    border-top: 3px solid #000;
+    border-bottom: 3px solid #eee;
+    border-top: 3px solid #eee;
     border-radius: 20px;
-    transition: 0.5s ease-in-out;
+    transition: 0.4s ease-in-out;
     font-style: italic;
 }
 
@@ -268,11 +279,11 @@ h1.page-title {
 }
 
 .box-sell {
-    width: 350px;
-    height: 350px;
-    background-size: 130%;
+    width: 250px;
+    height: 250px;
+    background-size: cover;
     background-position: center;
-    transition: 0.5s ease-in-out;
+    transition: 0.2s ease-in-out;
 }
 
 .box-sell:hover {
@@ -313,7 +324,7 @@ h1.page-title {
 }
 
 .boxReviews {
-    width: 15%;
+    width: 20%;
     height: 250px;
     padding: 30px 40px;
     background: #fff;
@@ -323,8 +334,12 @@ h1.page-title {
     justify-content: space-evenly;
 }
 
+.box-rank {
+    text-align: center;
+}
+
 .boxReview {
-    height: 110px;
+    height: auto;
 }
 
 .boxReviews i {
@@ -334,6 +349,7 @@ h1.page-title {
 
 .boxAuthor {
     text-align: right;
+    font-weight: bold;
 }
 
 #materials {
@@ -379,7 +395,7 @@ h1.page-title {
 /* --- FAQ --- */
 
 .container-faq {
-    padding: 100px 0;
+    padding: 3% 0;
     border-top: 1px solid #aaa;
     border-bottom: 1px solid #aaa;
     display: flex;
@@ -392,7 +408,7 @@ h1.page-title {
     width: 600px;
     text-align: justify;
     font-size: 16px;
-    margin-bottom: 100px;
+    margin-bottom: 4%;
 }
 
 #main-faq {
@@ -404,11 +420,11 @@ h1.page-title {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 .topics-faq {
-    width: 35%;
+    width: 45%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -430,7 +446,7 @@ h1.page-title {
 }
 
 .topics-faq:nth-child(n+3) {
-    margin-top: 100px;
+    margin-top: 4%;
 }
 
 .add-faq {
@@ -440,7 +456,6 @@ h1.page-title {
     background-position: center;
     background-repeat: no-repeat;
     background-size: 130%;
-    background-attachment: fixed;
     display: flex;
     justify-content: flex-end;
 }
@@ -504,14 +519,16 @@ h1.page-title {
 }
 
 .item-img {
-    width: 400px;
-    height: 400px;
+    width: 260px;
+    height: 260px;
     background-size: 150%;
     background-position: center;
-    transition: 0.5s ease-in-out;
+    transition: 0.2s ease-in-out;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
 }
 
 .item-img:hover {
@@ -522,11 +539,12 @@ h1.page-title {
 .item-img i {
     color: #fff;
     font-size: 20px;
-    padding: 20px
+    padding: 20px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
 .item-img i:hover {
-    color: #BF123E;
+    color: #ee2a7b;
     font-size: 20px;
     padding: 20px
 }

@@ -1,7 +1,9 @@
+require('dotenv').config();
+
 const mongoose = require("mongoose");
 
 //const dbUrl = `mongodb://${process.env.DBUSER}:${process.env.DBPWD}@${process.env.DBHOST}/?authSource=testdb`;
-const dbUrl = `mongodb+srv://${process.env.DBUSER}:${process.env.DBPWD}@${process.env.DBHOST}`;
+const dbUrl = `mongodb+srv://${process.env.DBUSER}:${process.env.DBPWD}@${process.env.DBHOST}?retryWrites=true&w=majority`;
 
 //set up Schema and model
 const JewerlySchema = new mongoose.Schema({
@@ -12,9 +14,20 @@ const JewerlySchema = new mongoose.Schema({
 });
 const Jewerly = mongoose.model("Jewerly", JewerlySchema);
 
+// Track connection status
+let isConnected = false;
+
 //MONGODB FUNCTIONS
 async function connect() {
-  await mongoose.connect(dbUrl); //connect to mongodb
+    if (isConnected) return;
+    try {
+        await mongoose.connect(dbUrl);
+        isConnected = true;
+        console.log("Connected to MongoDB");
+    } catch (err){
+        console.error ("Error connecting to MongoDB:", err);
+        throw err;
+    }
 }
 
 //Get all jewerlies from the jewerlies collection
@@ -25,6 +38,7 @@ async function getJewerlies() {
 
 // Initialize jewerlies collection with some data.
 async function initializeJewerlies(){
+    await connect();
   const jewerlyList = [
     {
         name: "Obsession",
@@ -124,17 +138,20 @@ async function initializeJewerlies(){
     }
   ];
   await Jewerly.insertMany(jewerlyList);
+  console.log("Jewerlies initialized");
 }
 
 // Function to add a jewerly to jewerlies collecion
 async function addJewerly(jewerlyName, jewerlyType, jewerlyPrice, jewerlyMaterial){
+    await connect();
     let newJewerly = new Jewerly({
       name: jewerlyName,
       type: jewerlyType,
       price: jewerlyPrice,
       material: jewerlyMaterial
     });
-    newJewerly.save(); // This is the line which actually saves newJewerly to the DB
+    await newJewerly.save(); // This is the line which actually saves newJewerly to the DB
+    console.log(`Added jewerly: ${jewerlyName}`);
   }
 
 module.exports = {
